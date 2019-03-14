@@ -1,0 +1,43 @@
+<h1>Books</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>title</th>
+			<th>body</th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @posts.each do |post| %>
+		<tr>
+			<td>
+				<%= post.title %>
+			</td>
+			<td>
+			<%= post.body %>
+		</td>
+		<td>
+			<%= link_to "show", post_path(post.id) %>
+			<%= link_to "edit",edit_post_path(post.id) %>
+			<%= link_to "destroy", destroy_post_path(post.id), method: :delete, "data-confirm" => "Are you sure?" %>
+		</td>
+	    </tr>
+	</tbody>
+</table>
+	    <% end %>
+
+<h3> New book</h3>
+<!-- form_for部分 -->
+<%= form_for(@post) do |f| %>
+ 
+    <h4>title</h4>
+    <%= f.text_field :title %>
+ 
+    <h4>body</h4>
+    <%= f.text_area :body %>
+ 
+ <br><%= f.submit 'Create Book' %></br>
+ 
+<% end %>
