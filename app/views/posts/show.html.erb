@@ -4,6 +4,6 @@
 <p><strong> Title: <%= @post.title %></strong></p>
 <p><strong> Body: <%= @post.body %></strong></p>
 
-<%= link_to "Edit", edit_post_path(@post.id) %>
-<%= link_to "Back", posts_path %>
+<%= link_to "Edit", edit_post_path(@post.id), class: "show_#{@post.id}" %>
+<%= link_to "Back", posts_path, class: "back" %>
 

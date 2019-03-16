@@ -30,10 +30,10 @@
 <!-- form_for部分 -->
 <%= form_for(@post) do |f| %>
  
-    <h4 class="layout">title</h4>
+    <h4 >title</h4>
     <%= f.text_field :title,class:"book_title" %>
  
-    <h4 class="layout">body</h4>
+    <h4 >body</h4>
     <%= f.text_area :body,class:"book_body" %>
  
  <br><%= f.submit 'Create Book' %></br>
